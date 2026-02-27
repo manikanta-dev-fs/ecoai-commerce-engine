@@ -38,7 +38,8 @@ class AIService:
             api_key=settings.groq_api_key,
             base_url=settings.groq_base_url,
         )
-        self.groq_model = "llama3-70b-8192"
+        self.groq_model = settings.groq_model
+        print(f"DEBUG: AIService initialized with model: {self.groq_model}")
 
     async def generate_json(
         self,
